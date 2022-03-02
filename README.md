@@ -12,6 +12,7 @@ docker-compose run app ng new angular-docker --directory . --skipInstall
 uncomment the tow lines from the Dockerfile :
 
 #COPY app/package.json ./
+
 #RUN npm install
 
 - Then run the following command (rebuild the containers with our new commands):
