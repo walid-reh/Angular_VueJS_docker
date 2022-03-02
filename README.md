@@ -29,6 +29,8 @@ docker-compose up
 
 # Vuejs template generation with Docker
 
+To start over delete the already generated application folder vuejs-docker/my-app.
+
 ## Commands
 
 - Create image by the name of vueapp:
@@ -37,8 +39,15 @@ docker-compose up
   docker run -itd -v ${PWD}:/app --name vueapp vueapp
 - Create the Vue js application :
   docker exec -it vueapp vue create my-app
+- To launch the application, first uncomment the lines in Dockerfile (vuejs-docker/Dockerfile):
 
-docker-compose up --build
+  #COPY my-app/package.json ./
+  #RUN npm install
+  #EXPOSE 8080
+  #CMD ["npm", "run", "serve"]
+
+- Then launch the following command :
+  docker-compose up --build
 
 ## URL to view application on browser
 
