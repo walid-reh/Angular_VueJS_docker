@@ -4,8 +4,8 @@ services:
     build: .
     restart: always
     volumes:
-      - "/code/node_modules"
-      - ./:/code
+      - ./app:/app 
+      - /app/node_modules
     ports:
       - 4200:4200
     command:
